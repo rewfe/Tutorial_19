@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CMV-hO-xeP">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Recipe Collection View Controller-->
+        <scene sceneID="c8w-mo-cQZ">
+            <objects>
+                <collectionViewController id="CMV-hO-xeP" customClass="RecipeCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="haz-iS-zpS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lwp-FN-SIO">
+                            <size key="itemSize" width="100" height="100"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="footerReferenceSize" width="50" height="50"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="xYI-tk-IFs">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pF0-hD-WYj">
+                                            <rect key="frame" x="5" y="6" width="90" height="88"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="pF0-hD-WYj" secondAttribute="bottom" constant="6" id="232-Oz-1Gu"/>
+                                    <constraint firstAttribute="centerY" secondItem="pF0-hD-WYj" secondAttribute="centerY" id="SmT-AI-RPA"/>
+                                    <constraint firstItem="pF0-hD-WYj" firstAttribute="centerX" secondItem="xYI-tk-IFs" secondAttribute="centerX" id="Uk3-Sn-Q20"/>
+                                    <constraint firstItem="pF0-hD-WYj" firstAttribute="leading" secondItem="xYI-tk-IFs" secondAttribute="leadingMargin" constant="-3" id="aR8-UO-eHV"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="5OP-n4-oJ5" kind="modal" identifier="showRecipePhoto" id="hLZ-db-r9W"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderView" id="5KQ-Fr-eCo" customClass="RecipeCollectionHeaderView">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="header_banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="dDl-9d-2Ln">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDO-Ym-a39">
+                                    <rect key="frame" x="262" y="14" width="42" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="centerX" secondItem="QDO-Ym-a39" secondAttribute="centerX" constant="17" id="Ljo-Wg-5VU"/>
+                                <constraint firstAttribute="centerY" secondItem="QDO-Ym-a39" secondAttribute="centerY" constant="0.5" id="loo-Xj-oMY"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="title" destination="QDO-Ym-a39" id="0ah-VC-xtX"/>
+                            </connections>
+                        </collectionReusableView>
+                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FooterView" id="buk-wI-Yut" customClass="RecipeCollectionHeaderView">
+                            <rect key="frame" x="0.0" y="150" width="600" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="footer_banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="iqx-Nb-HCj">
+                                    <rect key="frame" x="-8" y="0.0" width="600" height="50"/>
+                                </imageView>
+                            </subviews>
+                            <connections>
+                                <outlet property="backgroundImage" destination="iqx-Nb-HCj" id="F0d-iO-9g9"/>
+                            </connections>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="CMV-hO-xeP" id="Lod-bm-yGa"/>
+                            <outlet property="delegate" destination="CMV-hO-xeP" id="uGM-52-t5Z"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1G7-Ol-ehs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="357" y="256"/>
+        </scene>
+        <!--Recipe View Controller-->
+        <scene sceneID="LCb-GJ-FJM">
+            <objects>
+                <viewController id="5OP-n4-oJ5" customClass="RecipeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HKs-HW-UCy"/>
+                        <viewControllerLayoutGuide type="bottom" id="O2X-ho-YSJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SZk-xK-uvY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XZ5-9p-ICi">
+                                <rect key="frame" x="0.0" y="86" width="320" height="200"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UoG-CM-cGg">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem id="j0b-4k-RN4">
+                                        <barButtonItem key="leftBarButtonItem" title="Close" id="812-p4-dKj">
+                                            <connections>
+                                                <action selector="cancel:" destination="5OP-n4-oJ5" id="zZC-7y-bq5"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="recipeImageView" destination="XZ5-9p-ICi" id="nnR-dp-LVi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xE4-tD-hIl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1059" y="256"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="footer_banner.png" width="640" height="100"/>
+        <image name="header_banner.png" width="640" height="98"/>
+    </resources>
+</document>
