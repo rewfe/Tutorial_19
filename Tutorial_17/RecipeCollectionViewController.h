@@ -10,4 +10,9 @@
 
 @interface RecipeCollectionViewController : UICollectionViewController
 
+- (IBAction)shareButtonTouched:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *shareButton;
+
+
 @end

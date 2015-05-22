@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CMV-hO-xeP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mg6-oB-iun">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -82,10 +82,20 @@
                             <outlet property="delegate" destination="CMV-hO-xeP" id="uGM-52-t5Z"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" id="K0n-ZE-JBK">
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="GqY-6a-tE9">
+                            <connections>
+                                <action selector="shareButtonTouched:" destination="CMV-hO-xeP" id="Kip-sc-XAn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="shareButton" destination="GqY-6a-tE9" id="eFH-9D-F3U"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1G7-Ol-ehs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="357" y="256"/>
+            <point key="canvasLocation" x="1169" y="256"/>
         </scene>
         <!--Recipe View Controller-->
         <scene sceneID="LCb-GJ-FJM">
@@ -123,7 +133,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xE4-tD-hIl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1059" y="256"/>
+            <point key="canvasLocation" x="1871" y="256"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lX8-n6-RhQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mg6-oB-iun" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vCh-Wa-mRC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CMV-hO-xeP" kind="relationship" relationship="rootViewController" id="TZq-Od-jf1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ngf-us-rDX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="357" y="256"/>
         </scene>
     </scenes>
     <resources>
